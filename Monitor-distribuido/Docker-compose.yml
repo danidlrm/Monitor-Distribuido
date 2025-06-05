@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  server:
+    build: ./server
+    ports:
+      - "8080:8080"
+    networks:
+      - monitornet
+
+  client1:
+    build: ./client
+    depends_on:
+      - server
+    environment:
+      - AGENT_NAME=client1
+    networks:
+      - monitornet
+
+  client2:
+    build: ./client
+    depends_on:
+      - server
+    environment:
+      - AGENT_NAME=client2
+    networks:
+      - monitornet
+
+networks:
+  monitornet:
