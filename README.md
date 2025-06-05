@@ -1,1 +1,3 @@
 # Monitor-Distribuido
+
+Este proyecto implementa un sistema de monitoreo distribuido de recursos del sistema utilizando el lenguaje Go y contenedores Docker orquestados mediante Docker Compose. La arquitectura se compone de un servidor central que recibe reportes periódicos de múltiples clientes agentes, los cuales recolectan métricas locales como el uso de CPU y memoria de manera asíncrona. Gracias al uso de patrones concurrentes nativos de Go (como el Future Pattern), el sistema logra una alta eficiencia sin bloquear la ejecución principal. Esta solución ligera, extensible y portable está diseñada para ofrecer una visión en tiempo real del rendimiento de distintas máquinas o servicios, y puede ser fácilmente integrada a infraestructuras modernas de observabilidad.
